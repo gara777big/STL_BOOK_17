@@ -107,20 +107,29 @@ int main() {
 //    s1.delete_from_vectoO1(v, 2);
 //for A
 
-    Container<A> s1;
-    std::vector<A> v;
-    v.emplace_back(65);
-    v.emplace_back(546);
-    v.emplace_back(212);
-    v.emplace_back(542);
-    v.emplace_back(326);
-    v.emplace_back(1124);
-    std::cout << "\n\n";
-    std::cout << "vector ready\n\n";
-    std::cout << "\n\n";
-    s1.delete_from_vectoO1_index(v, 3);
-    //push_back, erase, clear not call reallocation
-    s1.delete_from_vecto01_iterator(v, v.begin());
+//    Container<A> s1;
+//    std::vector<A> v;
+//    v.emplace_back(65);
+//    v.emplace_back(546);
+//    v.emplace_back(212);
+//    v.emplace_back(542);
+//    v.emplace_back(326);
+//    v.emplace_back(1124);
+//    std::cout << "\n\n";
+//    std::cout << "vector ready\n\n";
+//    std::cout << "\n\n";
+//    s1.delete_from_vectoO1_index(v, 3);
+//    //push_back, erase, clear not call reallocation
+//    s1.delete_from_vecto01_iterator(v, v.begin());
+
+    const size_t container_size = 100;
+    std::vector<int> v(container_size, 43);
+    std::cout << v[container_size + 324] << std::endl;
+    try {
+        std::cout << v.at(container_size + 3243) << std::endl;
+    }catch (std::out_of_range&  e){
+         std::cout << e.what() << std::endl;
+    }
 
     return 0;
 }
